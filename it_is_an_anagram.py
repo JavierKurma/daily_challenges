@@ -18,8 +18,10 @@ def anagram(word_1,word_2):
     for c in word_2:
         if c.isalnum():
             clean_2+=c
-    if len(clean_1)==len(clean_2):
-        pass
-    else:
+    if not len(clean_1)==len(clean_2):
         return False
-anagram("Facundo....    aguirre...12312","abc")
+    for i in clean_1:
+        if i not in clean_2:
+            return False
+        if not clean_1.count(i)==clean_2.count(i):
+            return False
