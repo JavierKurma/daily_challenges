@@ -23,3 +23,4 @@ for i in range(x):
     else:
         print(fibonacci(i), end=", ")
 
+#Veamos la forma de optimizar la serie de fibonacci con un generador
