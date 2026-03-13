@@ -17,10 +17,23 @@ x=int(input("->"))
 while not isinstance(x,int):
     print("Ingrese un numero")
     x=int(input("->"))
-for i in range(x):
+
+"""for i in range(x):
     if i==x-1:
         print(fibonacci(i))
     else:
-        print(fibonacci(i), end=", ")
+        print(fibonacci(i), end=", ")"""
 
 #Veamos la forma de optimizar la serie de fibonacci con un generador
+#Deberiamos crear un generador que llame a fibonacci cada vez y luego guarde el valor:
+def fibonacci_generador():
+    a,b=0,1
+    while True:
+        yield a
+        a,b=b,a+b
+
+gen=fibonacci_generador()
+for i in range(x):
+    print(next(gen))
+
+
