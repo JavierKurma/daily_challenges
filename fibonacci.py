@@ -24,8 +24,8 @@ while not isinstance(x,int):
     else:
         print(fibonacci(i), end=", ")"""
 
-#Veamos la forma de optimizar la serie de fibonacci con un generador
-#Deberiamos crear un generador que llame a fibonacci cada vez y luego guarde el valor:
+#Let's see how to optimize the Fibonacci series with a generator
+#We should create a generator that calls Fibonacci each time and then stores the value:
 def fibonacci_generador():
     a,b=0,1
     while True:
