@@ -16,20 +16,20 @@ response=requests.get(url)
 image=Image.open(BytesIO(response.content))
 width,height=image.size
 gcd=math.gcd(height,width)
-height=height//gcd
-width=width//gcd
-print(f"Aspect Ratio={width}:{height}")
-if width==16 and height==9:
+ratio_h=height//gcd
+ratio_w=width//gcd
+print(f"Aspect Ratio={ratio_w}:{ratio_h}")
+if ratio_w==16 and ratio_h==9:
     print("Modern screens ratio")
-elif width==9 and height==16:
+elif ratio_w==9 and ratio_h==16:
     print("Vertical videos ratio")
-elif width==4 and height==3:
+elif ratio_w==4 and ratio_h==3:
     print("Old monitor ratio")
-elif width==3 and height==2:
-    print("Usal cameras ratio")
-elif width==1 and height==1:
+elif ratio_w==3 and ratio_h==2:
+    print("Usual cameras ratio")
+elif ratio_w==1 and ratio_h==1:
     print("Square ratio")
-if width>height:
-    print("Work for landscape")
-elif width<height:
-    print("Work for portrait")
+if ratio_w > ratio_h:
+    print("Landscape orientation")
+elif ratio_w < ratio_h:
+    print("Portrait orientation")
