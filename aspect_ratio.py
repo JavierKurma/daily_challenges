@@ -10,16 +10,22 @@ image from a URL.
 import requests
 from PIL import Image
 from io import BytesIO
+import math
 
-url= " https://raw.githubusercontent.com/mouredev/mouredev/master/mouredev_github_profile.png"
+url= "https://i.pinimg.com/originals/49/dc/85/49dc8564e17e811fcbcfe076144d5082.jpg"
 
 response=requests.get(url)
 
 image=Image.open(BytesIO(response.content))
 
-height,widht=image.size
+width,height=image.size
+print(width)
+print(height)
+gcd=math.gcd(height,width)
+height=height//gcd
+width=width//gcd
 
-print(image.size)
-#print(image.show())
-print(f"Altura= {height}, Largo= {widht}")
+print(f"The ratio from the image is {width}:{height}")
+#image.show()
+
 
