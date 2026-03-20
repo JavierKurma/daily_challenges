@@ -19,5 +19,17 @@ gcd=math.gcd(height,width)
 height=height//gcd
 width=width//gcd
 print(f"Aspect Ratio={width}:{height}")
-
-
+if width==16 and height==9:
+    print("Modern screens ratio")
+elif width==9 and height==16:
+    print("Vertical videos ratio")
+elif width==4 and height==3:
+    print("Old monitor ratio")
+elif width==3 and height==2:
+    print("Usal cameras ratio")
+elif width==1 and height==1:
+    print("Square ratio")
+if width>height:
+    print("Work for landscape")
+elif width<height:
+    print("Work for portrait")
